@@ -29,7 +29,8 @@ void List::addpcb(PCB* p){
 	_LOCK;
 #endif
 	    Elem* pom=new Elem(p);
-	    	if(!first)first=pom;
+	    	if(!first)
+			first=pom;
 	    	else
 	    		last->next=pom;
 	    	last=pom;
@@ -110,9 +111,10 @@ void List::removebyID(ID i){
 		now=now->next;
 	}
 	if(now){
-    if(old==0){
-    	first=first->next;
-    	if(first==0)last=0;
+    		if(old==0){
+    			first=first->next;
+    			if(first==0)
+				last=0;
     }
     else
     	old->next=now->next;
@@ -138,7 +140,8 @@ PCB* List::getFirst(){
 		first->p=0;
 		first=first->next;
 		pom->next=0;
-		if(first==0)last=0;
+		if(first==0)
+			last=0;
 		delete pom;
 #ifndef BCC_BLOCK_IGNORE
 	_UNLOCK;
